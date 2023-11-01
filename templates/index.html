@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ScanWise</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <h1 class="text-center">Breast Cancer Classification</h1>
+        <form class="p-3 text-center" action='http://127.0.0.1:3000/', method="post" enctype="multipart/form-data">
+            <input class="form-control" type="file" name="imagefile" >
+            <input class="btn btn-primary mt-3"type="submit" value="Predict Image" >
+        </form>
+
+        <!-- "{% if prediction %}
+            <p class="text-center"> Image is a {{prediction}}</p>
+        {% endif %}" -->
+
+        <!-- {% if prediction %}
+            <p class="text-center"> Image is {{ prediction[0] }}</p>
+            <p class="text-center"> Subtype is {{ prediction[1] }}</p>
+        {% endif %} -->
+
+        {% if prediction %}
+            <div class="container text-center">
+                <div class="row justify-content-center">
+                    <dt class="col-sm-5">Classification :</dt>
+                    <dd class="col-sm-9">{{prediction[0]}}</dd>
+                </div>
+            </div>
+            <div class="container text-center">
+                <div class="row justify-content-center">
+                    <dt class="col-sm-5">Sub Type :</dt>
+                    <dd class="col-sm-9">{{prediction[1]}}</dd>
+                </div>
+            </div>
+        {% endif %}
+       
+
+        <footer class="text-center text-white" style="background-color: #FF51AF;">
+            <section class="mt-5">
+                <footer class="text-center text-white" style="background-color: #FF51AF; width:100%; padding: 0;">
+                    <div class="container">
+                        <section class="mt-5">
+                            <div class="row text-center d-flex justify-content-center pt-5">
+                                <div class="col-md-2">
+                                <h6 class="text-uppercase font-weight-bold">
+                                    <a href="#!" class="text-white">About us</a>
+                                </h6>
+                                </div>
+                                <div class="col-md-2">
+                                <h6 class="text-uppercase font-weight-bold">
+                                    <a href="#!" class="text-white">Self Check</a>
+                                </h6>
+                                </div>
+                                <div class="col-md-2">
+                                <h6 class="text-uppercase font-weight-bold">
+                                    <a href="#!" class="text-white">Awards</a>
+                                </h6>
+                                </div>
+                                <div class="col-md-2">
+                                <h6 class="text-uppercase font-weight-bold">
+                                    <a href="#!" class="text-white">Help</a>
+                                </h6>
+                                </div>
+                                <div class="col-md-2">
+                                <h6 class="text-uppercase font-weight-bold">
+                                    <a href="#!" class="text-white">Contact</a>
+                                </h6>
+                                </div>
+                            </div>
+            </section>
+            <hr class="my-5" />
+            <section class="mb-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8">
+                    <p>                 
+                        "Join us in our quest to reshape the future of breast cancer. Together, we envision a world where early detection is the guardian of lives, offering hope and relief to families. Let's unite to create a brighter tomorrow, where breast cancer is a story of resilience, not despair."
+                    </p>
+                </div>
+            </div>
+            </section>
+            </div>
+            <div>
+                class="text-center p-3"
+                style="background-color: rgba(0, 0, 0, 0.2)"
+                >
+                © 2023 Copyright:
+                <a class="text-white" href="#"
+                >ScanWise</a
+                >
+            </div>
+        </footer>
+    </body>
+</html>
